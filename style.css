@@ -719,10 +719,30 @@ a {
 .pageNumbers {
   margin: 0 0.5rem;
   border-left: 1px solid #979797;
+  display: flex;
 }
 
 .allPageNo {
   padding: 0 0.5rem;
+  display: flex;
+  max-width: 120px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.allPageNo::-webkit-scrollbar {
+  display: none;
+}
+
+a.page-numbers {
+  padding: 0.5em;
+}
+
+a.page-numbers:hover {
+  color: #e20074;
+}
+
+a.page-numbers.active {
+  color: #e20074;
 }
 
 .pageNumbersBtn {
@@ -858,7 +878,7 @@ th:hover{
 
   aside {
     display: none;
-    width: 60vw;
+    width: 30vw;
     position: absolute;
     z-index: 1;
     transition: ease-out 0.2s;
@@ -977,6 +997,7 @@ th:hover{
   .menu-bar{
     display: block;
   }
+
 }
 
 @media only screen and (max-width: 375px) {
@@ -1036,7 +1057,9 @@ th:hover{
   .menu-bar{
     display: block;
   }
-
+  .allPageNo {
+    max-width: 60px;
+  }
 }
 
 @media only screen and (max-width: 465px) {
